@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout 
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app = "http://schemas.android.com/apk/res-auto"
+              android:id="@+id/main_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.NoActionBar">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|snap"
+                    />
+            </android.support.design.widget.AppBarLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15dp"
+        android:src="@mipmap/add_2"
+        />
+    <RelativeLayout
+        android:id="@+id/rl_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:behavior_hideable ="false"
+        app:behavior_peekHeight = "100dp"
+        android:background="@color/colorAccent"
+        >
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

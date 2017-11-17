@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.alex.coordinatedemo"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile rootProject.ext.dep["appcompat-v7"]
+    compile rootProject.ext.dep["recyclerview-v7"]
+    compile rootProject.ext.dep["cardview-v7"]
+    compile rootProject.ext.dep["design"]
+    compile rootProject.ext.dep["logger"]
+    compile rootProject.ext.dep["percent"]
+    compile rootProject.ext.dep["picasso"]
+    compile rootProject.ext.dep["okhttp3"]
+    compile rootProject.ext.dep["gson"]
+    testCompile 'junit:junit:4.12'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.clans:fab:1.6.4'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+
+}
